@@ -346,15 +346,27 @@ document.querySelector("#button3").addEventListener("mouseleave",function(){
     })
 })
 
+ScrollTrigger.create({
+    trigger: "#page4", // The section where you want to disable scrolling
+    start: "top 0%", // When to start the trigger
+    end: "bottom 100%", // When to end the trigger
+    onEnter: function() {
+      locomotiveScroll.stop(); // Stop Locomotive Scroll when entering the section
+    },
+    onLeaveBack: function() {
+      locomotiveScroll.start(); // Start Locomotive Scroll when leaving the section
+    }
+  });
+  
 
 gsap.to("#scrollPage4",{
-    x:"-80%",
+    left:"-100%",
     scrollTrigger:{
         scroller:"#main",
         trigger:"#scrollPage4",
         scrub:2,
         markers:true,
-        start:"top 60%",
+        start:"top 40%",
         end:"top -100%",
         pin:true,
     }
