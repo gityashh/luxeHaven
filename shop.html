@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <style>
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: prop;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: prop;
+    src: url(./3534416bbfdcc9be-s.p.woff2);
+}
+
+#main{
+    width: 100%;
+    position: relative;
+    background-color: #F3F0EA;
+}
+
+#nav{
+    height: 7vh;
+    width: 100vw;
+    background-color: #F3F0EA;
+    padding: 1.8vh 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0%;
+    z-index: 120;
+}
+
+#nav #logo{
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #4C3D30;
+}
+#centerNav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#lines{
+    margin-left: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.line{
+    height: 1px;
+    width: 2vw;
+    background-color: #4C3D30;
+}
+#centerNav h4{
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #4C3D30;
+}
+
+#rightNav{
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+#rightNav h4{
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #4C3D30;
+}
+#cart{
+    display: flex;
+    align-items: center;
+    gap: .8vw;
+}
+
+#navToggle{
+    height: 0vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 60;
+    background-color: rgba(0, 0, 0, 0.371);
+    backdrop-filter: blur(10px); 
+}
+#options{
+    transform: translateY(-100%);
+    height: 50vh;
+    width: 100%;
+    background-color: #F3F0EA;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+#atags{
+    height: 40%;
+    width: 60%;
+    display: flex;
+    padding: 0vh 30px;
+    flex-wrap: wrap;
+    gap: 0px;
+    align-items: center;
+    margin-top: 15vh;
+    justify-content: flex-start;
+}
+#atags a{
+    height: 10vh;
+    font-size: 4.2vw;
+    color: rgba(0, 0, 0, 0.301);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 40px;
+    filter: blur(0px);  
+}
+
+#atags h1{
+    font-size: 4.2vw;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 35px;
+    font-weight: 400;
+    transform: translateY(100%);
+    padding-left: 14px;
+}
+
+.at{
+    /* background-color: #4C3D30; */
+    overflow: hidden;
+}
+#home{
+    font-style: italic;
+}
+.at span{
+    display: inline-block;
+}
+#front{
+    min-height: 100vh;
+    width: 100%;
+}
+#top{
+    height: 10vh;
+    width: 100%;
+    margin-top: 7vh;
+}
+#bar{
+    height: 0.5px;
+    width: 100%;
+    background-color: #4C3D30;
+}
+#top-2 {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+#top-2 h1{
+    font-size: 8vw;
+    font-weight: 100;
+    font-family: prop;
+    color: #4C3D30;
+}
+#items{
+    height: 100px;
+    width: 130px;
+    border: 1px #4C3D30 solid;
+    border-radius: 50px;
+}
+#items h1{
+    font-size: 4vw;
+    font-weight: 300;
+    text-align: center;
+}
+#categories{
+    width: 100%;
+    margin-top: 10vh;
+    padding-left: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.categ{
+    text-align: center;
+    height:30px;
+    width: fit-content;
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px #4C3D30 solid;
+}
+.categ h4{
+    font-size: 1vw;
+    font-weight: 200;
+}
+#catalogue{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.card{
+    height: 75vh;
+    width: 31vw;
+    background-color: #E8E0D4;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin: 19px;
+}
+.card #imgCard{
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+.card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+.card #details{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    color: #4C3D30;
+}
+#leftdet h1{
+    font-size: 3vw;
+    font-family: prop;
+    font-weight: 100;
+
+}
+#leftdet h5{
+    font-size: 1.2vw;
+    font-family: prop;
+    font-weight: 300;
+}
+
+#rightdet{
+    font-size: 2vw;
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="nav">
+            <h1 id="logo">Props</h1>
+            <div id="centerNav">
+                <div id="lines">
+                    <div id="one" class="line"></div>
+                    <div id="two" class="line"></div>
+                </div>
+                <h4>Menu</h1>
+            </div>
+            <div id="rightNav">
+                <h4>Shop</h4>
+                <div id="cart">
+                    <i class="ri-shopping-cart-2-line"></i>
+                    <h4>Cart (0)</h4>
+                </div>
+            </div>
+        </div>
+        <div id="navToggle">
+            <div id="options">
+                <div id="atags">
+                    <div class="at"><h1 id="home"  localUrl="chairs_nemcam.png" href="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Home</h1></div>
+                    <div class="at"><h1 id="shop"  localUrl="hero.webp" href="https://props.studiolumio.com/tables.webp">Shop</h1></div>
+                    <div class="at"><h1 id="about" localUrl="lamps.webp" href="https://props.studiolumio.com/lamps.webp">About us</h1></div>
+                    <div class="at"><h1 id="lookbook" localUrl="lookbook.webp" href="https://props.studiolumio.com/lookbook.webp">lookbook</h1></div>
+                    <div class="at"><h1 id="contact" localUrl="tables.webp" href="https://props.studiolumio.com/hero.webp">contact</h1></div>
+                </div>
+                <div id="navImage"></div>
+            </div>
+        </div>
+        <div id="front">
+           <div id="top">
+            <div id="bar"></div>
+            <div id="top-2">
+                <h1>ALL</h1>
+                <div id="items">
+                    <h1>23</h1>
+                </div>
+            </div>
+           </div> 
+           <div id="categories">
+            <div class="categ"><h4>All (23)</h4></div>
+            <div class="categ"><h4>Tables (7)</h4></div>
+            <div class="categ"><h4>Lamps (2)</h4></div>
+            <div class="categ"><h4>Chairs (9)</h4></div>
+            <div class="categ"><h4>Shelves (5)</h4></div>
+           </div>
+           <div id="catalogue">
+            <div class="card">
+                <div id="imgCard">
+                    <img id="img" src="https://images.unsplash.com/photo-1559051668-9024c9b5e84b?q=80&w=2356&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div id="details">
+                    <div id="leftdet">
+                        <h1>$100</h1>
+                        <h5>Comfy Cushions</h5>
+                    </div>
+                    <div id="rightdet">
+                        <i class="ri-shopping-cart-fill"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="imgCard">
+                    <img src="https://images.unsplash.com/photo-1578500351865-d6c3706f46bc?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div id="details">
+                    <div id="leftdet">
+                        <h1>$100</h1>
+                        <h5>Comfy Cushions</h5>
+                    </div>
+                    <div id="rightdet">
+                        <i class="ri-shopping-cart-fill"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="imgCard">
+                    <img src="https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div id="details">
+                    <div id="leftdet">
+                        <h1>$100</h1>
+                        <h5>Comfy Cushions</h5>
+                    </div>
+                    <div id="rightdet">
+                        <i class="ri-shopping-cart-fill"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="imgCard">
+                    <img id="img" src="https://images.unsplash.com/photo-1559051668-9024c9b5e84b?q=80&w=2356&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div id="details">
+                    <div id="leftdet">
+                        <h1>$100</h1>
+                        <h5>Comfy Cushions</h5>
+                    </div>
+                    <div id="rightdet">
+                        <i class="ri-shopping-cart-fill"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="imgCard">
+                    <img src="https://images.unsplash.com/photo-1578500351865-d6c3706f46bc?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div id="details">
+                    <div id="leftdet">
+                        <h1>$100</h1>
+                        <h5>Comfy Cushions</h5>
+                    </div>
+                    <div id="rightdet">
+                        <i class="ri-shopping-cart-fill"></i>
+                    </div>
+                </div>
+            </div>
+         
+            
+           </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    function splitter(title) {
+    var clutter = ""
+    title.textContent.split("").forEach(function (element) {
+    clutter += `<span>${element}</span>`
+    });
+    title.innerHTML = clutter;
+    }
+    var lines = document.querySelector("#lines")
+    var flag = 0;
+    lines.addEventListener("click",function () {
+    if (flag == 0) {
+        document.body.style.overflow = "hidden"
+        document.documentElement.style.overflow = "hidden"
+        gsap.to("#one",{
+            rotation:45,
+            duration:1,
+            transformOrigin:"center center"
+        })
+        gsap.to("#two",{
+            rotation:-45,
+            duration:1,
+            transformOrigin:"center center"
+        })
+        gsap.to("#rightNav",{
+            opacity:0,
+            duration:1.5
+        })
+        gsap.to("#atags span",{
+            y:"-100%",
+            duration:0.5,
+            stagger:0.02,
+            delay:0.4,
+            ease: "expo.InOut"
+        })
+        gsap.to("#navToggle",{
+            height:"100vh",
+            duration:1.5,
+            ease:"expo.inOut"
+        })
+        gsap.to("#options",{
+            y:"0%",
+            duration:1.5,
+            ease:"expo.inOut"
+        })
+        flag = 1;
+    }
+    else{
+        document.body.style.overflow = "visible"
+        document.documentElement.style.overflow = "visible"
+        gsap.to("#one",{
+            rotation:0,
+            duration:1,
+            transformOrigin:"center center"
+        })
+        gsap.to("#two",{
+            rotation:0,
+            duration:1,
+            transformOrigin:"center center"
+        })
+        gsap.to("#rightNav",{
+            opacity:1,
+            duration:2
+        })
+        gsap.to("#atags span",{
+            y:0,
+            duration:0.4,
+            stagger:-0.02,
+            ease: "expo.InOut"
+        })
+        gsap.to("#navToggle",{
+            height:"0vh",
+            duration:1.5,
+            ease:"expo.inOut"
+        })
+        gsap.to("#options",{
+            y:"-100%",
+            duration:1.5,
+            ease:"expo.inOut"
+        })
+        flag = 0;
+    }
+ })
+ 
+var atags = document.querySelectorAll("#atags h1")
+console.log(atags);
+
+atags.forEach(element => {
+    console.log(element.id);
+    element.addEventListener("mouseenter",function () {
+        gsap.to("#navImage",{
+            opacity:1,
+            backgroundImage:`url(./${element.getAttribute("localUrl")})`,
+            duration:0.3,
+            ease:"expo.in"
+        }) 
+       gsap.to(".at h1",{
+         filter: "blur(5px)",
+         color: "rgba(0, 0, 0, 0.401)"
+       })
+       gsap.to(`.at #${element.id}`,{
+        filter: "blur(0px)",
+        color: "black"
+       })
+    })
+    element.addEventListener("mouseleave",function () {
+        gsap.to(".at h1",{
+            filter: "blur(0px)",
+            color: "black"
+        })
+    })
+});
+var atagOuter = document.querySelector("#atags")
+atagOuter.addEventListener("mouseleave",function(){
+    gsap.to("#navImage",{
+        opacity:0,
+        duration:0.4,
+        ease:"expo.in"
+    })
+})
+
+atags.forEach(function (e) {
+    splitter(e)
+})
+
+    </script>
+</body>
+</html>

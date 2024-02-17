@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Product</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        @font-face {
+    font-family: prop;
+    src: url(./3534416bbfdcc9be-s.p.woff2);
+}
+
+        #main{
+            height: 100vh;
+            width: 100vw;
+            background-image: url(https://images.ctfassets.net/tuohjudwxvzs/6Lh6ZKQCNPBMSwtn179FeO/05eda274b9f0b05b176972c327c043c9/contact_y06ui0.png);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #main h1{
+            top: 15%;
+            position: absolute;
+            font-size: 8vw;
+            font-family: prop;
+            font-weight: 300;
+            color: #4C3D30;
+        }
+        form{
+            height: 50vh;
+            width: 30vw;
+            background-color: #4c3d3042;
+            padding:  10px;
+            margin-top: 20vh;
+
+        }
+        label{
+            font-size: 2vw;
+            font-family: prop;
+            color: #F3F0EA;
+        }
+        input{
+            background-color: transparent;
+            border: 1px solid #4C3D30;
+            height: 40px;
+            width: 100%;
+            font-weight: 300;
+            font-size: 1.5v;
+            text-decoration: none;
+            font-family: prop;
+            outline: none;
+        }
+        textarea{
+            background-color: transparent;
+            border: 1px solid #4C3D30;
+            height: 40px;
+            width: 100%;
+            outline: none;
+        }
+        #productName{
+            font-size: 2vw;
+            font-family: prop;
+            color: #F3F0EA;
+        }
+        #detail{
+            font-size: 2vw;
+            font-family: prop;
+            color: #F3F0EA;
+        }
+        #price{
+            font-size: 2vw;
+            font-family: prop;
+            color: #F3F0EA;
+        }
+        #discount{
+            font-size: 2vw;
+            font-family: prop;
+            color: #F3F0EA;
+        }
+        #image{
+            font-size: 1vw;
+            font-family: prop;
+            color: #F3F0EA;
+        }
+        button{
+            height: 60px;
+            width: 200px;
+            border: none;
+            background-color: #4C3D30;
+            color: #F3F0EA;
+            font-size: 1vw;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Upload Product</h1>
+    <form action="/products/upload" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" required>
+        </div>
+        <div>
+            <label for="detail">Detail:</label>
+            <textarea id="detail" name="detail" required></textarea>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+        </div>
+        <div>
+            <label for="discount">Discount:</label>
+            <input type="number" id="discount" name="discount" required>
+        </div>
+        <div>
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="imageofproduct" accept="image/*" required>
+        </div>
+        <button type="submit">Upload Product</button>
+    </form>
+    </div>
+</body>
+</html>

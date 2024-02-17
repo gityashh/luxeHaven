@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            font-family: prop;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        @font-face {
+            font-family: prop;
+            src: url(./3534416bbfdcc9be-s.p.woff2);
+        }
+
+        #main {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            background-color: #F3F0EA;
+            color: #4C3D30;
+            padding-inline: 20px;
+        }
+        #top{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #top h1{
+            font-size: 3vw;
+            font-weight: 200;
+
+        }
+        #close{
+            color: #4C3D30;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #close h2{
+            font-size: 1.5vw ;
+            font-weight: 200;
+        }
+        #close i{
+            font-size: 2vw;
+            font-weight: 100;
+           
+            transform: translateY(6%);
+        }
+        #center{
+            display: flex;
+            align-items: flex-start;
+            height: 100vh;
+            width: 100%;
+           
+            justify-content: space-between;
+        }
+        #checkout{
+            height: 80%;
+            width: 30%;
+            background-color: #4c3d3097;
+            position: fixed;
+            top: 16%;
+            left: 68.5%;
+        }
+        #list{
+            margin-top: 50px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .elem{
+            height: 20vh;
+            width: 100%;
+            background-color: #E8E0D4;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            font-size: 2.5vw;
+
+        }
+        #mono{
+            height: 100%;
+            overflow: hidden;
+            width: 150px;
+        }
+        #mono img{
+            height: 20vh;
+            object-fit: cover;
+
+        }
+        #textPart{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 20px;
+        }
+        #textPart h3{
+            font-size: 2vw;
+            font-weight: 600;
+        }
+        #category{
+            height: 20px;
+            width: fit-content;
+            padding-inline: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F3F0EA;
+            border-radius: 50px;
+        }
+        #category h4{
+            font-size: 1vw;
+            font-weight: 100;
+            text-transform: uppercase;
+        }
+        #price h3{
+            font-size: 2vw;
+            font-weight: 100;
+        }
+        #icon{
+            margin-left: 270px;
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <h1>Order summary</h1>
+            <div id="close">
+                <h2>Close</h2>
+                <i class="ri-close-fill"></i>
+            </div>
+        </div>
+        <div id="center">
+            <div id="list">
+                <div class="elem">
+                    <div id="mono"><img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div id="textPart">
+                        <h3 id="productName">
+                            Classic wooden shelf
+                        </h3>
+                        <div id="category">
+                            <h4>Large</h4>
+                        </div>
+                        <div id="price">
+                            <h3>$200</h3>
+                        </div>
+                    </div>
+                    <i id="icon" class="ri-close-fill"></i>
+                </div>
+                <div class="elem">
+                    <div id="mono"><img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div id="textPart">
+                        <h3 id="productName">
+                            Classic wooden shelf
+                        </h3>
+                        <div id="category">
+                            <h4>Large</h4>
+                        </div>
+                        <div id="price">
+                            <h3>$200</h3>
+                        </div>
+                    </div>
+                    <i id="icon" class="ri-close-fill"></i>
+                </div>
+            </div>
+            <div id="checkout">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
