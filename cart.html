@@ -69,7 +69,6 @@
             align-items: flex-start;
             height: 100vh;
             width: 100%;
-           
             justify-content: space-between;
         }
         #checkout{
@@ -96,6 +95,7 @@
             display: flex;
             align-items: flex-start;
             font-size: 2.5vw;
+            position: relative;
 
         }
         #mono{
@@ -128,6 +128,7 @@
             justify-content: center;
             background-color: #F3F0EA;
             border-radius: 50px;
+            
         }
         #category h4{
             font-size: 1vw;
@@ -138,8 +139,9 @@
             font-size: 2vw;
             font-weight: 100;
         }
-        #icon{
-            margin-left: 270px;
+        .icon{
+            position: absolute;
+            right: 0%;
         }
     
         
@@ -156,43 +158,39 @@
         </div>
         <div id="center">
             <div id="list">
-                <div class="elem">
-                    <div id="mono"><img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                    </div>
-                    <div id="textPart">
-                        <h3 id="productName">
-                            Classic wooden shelf
-                        </h3>
-                        <div id="category">
-                            <h4>Large</h4>
-                        </div>
-                        <div id="price">
-                            <h3>$200</h3>
-                        </div>
-                    </div>
-                    <i id="icon" class="ri-close-fill"></i>
-                </div>
-                <div class="elem">
-                    <div id="mono"><img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                    </div>
-                    <div id="textPart">
-                        <h3 id="productName">
-                            Classic wooden shelf
-                        </h3>
-                        <div id="category">
-                            <h4>Large</h4>
-                        </div>
-                        <div id="price">
-                            <h3>$200</h3>
-                        </div>
-                    </div>
-                    <i id="icon" class="ri-close-fill"></i>
-                </div>
+                
             </div>
             <div id="checkout">
 
             </div>
         </div>
     </div>
+    <script>
+
+var cartArr = [{product:"Classic wooden shelf",price:"₹2000",size:"large",image:"https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},{product:"Navy pot",price:"₹1600",size:"large",image:"https://images.unsplash.com/photo-1554577621-1a3def0b656c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmFzZXxlbnwwfHwwfHx8MA%3D%3D"}]
+
+var clutter = ""
+cartArr.forEach(element => {
+    clutter += `<div class="elem">
+    <div id="mono"><img src="${element.image}">
+    </div>
+    <div id="textPart">
+        <h3 id="productName">
+            ${element.product}
+        </h3>
+        <div id="category">
+            <h4>${element.size}</h4>
+        </div>
+        <div id="price">
+            <h3>${element.price}</h3>
+        </div>
+    </div>
+    <i class="icon ri-close-fill"></i>
+</div>`
+console.log(clutter);
+});
+
+document.querySelector("#list").innerHTML = clutter;
+    </script>
 </body>
 </html>

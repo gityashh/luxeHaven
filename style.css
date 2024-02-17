@@ -78,6 +78,13 @@ html,body{
     font-weight: 400;
     color: #4C3D30;
 }
+#rightNav a{
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #4C3D30;
+    text-decoration: none;
+}
 #search{
     height: 40px;
     width: 300px;
@@ -242,6 +249,13 @@ html,body{
 }
 #button h4{
     font-size: .95vw;
+}
+#button a{
+    font-size: .95vw;
+    color: #F3F0EA;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 #arrow{
     height: 40px;

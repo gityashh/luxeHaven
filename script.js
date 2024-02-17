@@ -371,3 +371,34 @@ gsap.to("#scrollPage4",{
         pin:true,
     }
 })
+
+var book = document.querySelector(".book")
+
+// book.addEventListener("click",function () { 
+//     window.location.href = 'http://127.0.0.1:5500/service.html';
+// })
+
+var cartArr = [{product:"Classic wooden shelf",price:"₹2000",size:"large",image:"https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},{product:"Classic wooden shelf",price:"₹2000",size:"large",image:""}]
+
+var clutter = ""
+cartArr.forEach(element => {
+    clutter += `<div class="elem">
+    <div id="mono"><img src="${element.image}">
+    </div>
+    <div id="textPart">
+        <h3 id="productName">
+            ${element.product}
+        </h3>
+        <div id="category">
+            <h4>${element.category}</h4>
+        </div>
+        <div id="price">
+            <h3>${element.price}</h3>
+        </div>
+    </div>
+    <i id="icon" class="ri-close-fill"></i>
+</div>`
+console.log();
+});
+
+document.querySelector("#list").innerHTML = clutter;
